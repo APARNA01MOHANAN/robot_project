@@ -1,0 +1,14 @@
+1673952390201	geckodriver	INFO	Listening on 127.0.0.1:62359
+1673952393261	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "--remote-debugging-port" "62360" "--remote-allow-hosts" "localhost" "-no-remote" "-profile" "C:\\Users\\40032118\\AppData\\Local\\Temp\\rust_mozprofile4h7xsM"
+1673952393774	Marionette	INFO	Marionette enabled
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at C:\\Users\\40032118\\AppData\\Local\\Temp\\rust_mozprofile4h7xsM\\search.json.mozlz4", (void 0)))
+DevTools listening on ws://localhost:62360/devtools/browser/eb972bf7-7a9f-4f48-9ac6-8eaf654a2ce4
+1673952396281	Marionette	INFO	Listening on port 62384
+Read port: 62384
+1673952396421	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+console.warn: LoginRecipes: "getRecipes: falling back to a synchronous message for:" "https://www.db4free.net"
+1673953057029	Marionette	INFO	Stopped listening on port 62384
+console.warn: TopSitesFeed: Failed to fetch data from Contile server: NetworkError when attempting to fetch resource.
+
+###!!! [Parent][PGPUParent] Error: RunMessage(msgname=PGPU::Msg_ShutdownVR) Channel closing: too late to send/recv, messages will be lost
+
