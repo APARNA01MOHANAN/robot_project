@@ -1,51 +1,49 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<robot generator="Robot 6.0.2 (Python 3.11.1 on win32)" generated="20230118 15:48:24.133" rpa="false" schemaversion="3">
+<robot generator="Robot 6.0.2 (Python 3.11.1 on win32)" generated="20230119 11:14:02.868" rpa="false" schemaversion="3">
 <suite id="s1" name="Demo11 Advance" source="C:\robot_project\selenium_suite\demo11_advance.robot">
-<test id="s1-t1" name="TC2" line="13">
+<test id="s1-t1" name="tc5" line="46">
 <kw name="Open Browser" library="SeleniumLibrary">
 <arg>browser=chrome</arg>
 <doc>Opens a new browser instance to the optional ``url``.</doc>
-<msg timestamp="20230118 15:48:24.504" level="INFO">Opening browser 'chrome' to base url 'None'.</msg>
-<status status="PASS" starttime="20230118 15:48:24.504" endtime="20230118 15:48:27.362"/>
+<msg timestamp="20230119 11:14:03.236" level="INFO">Opening browser 'chrome' to base url 'None'.</msg>
+<status status="PASS" starttime="20230119 11:14:03.235" endtime="20230119 11:14:04.947"/>
 </kw>
 <kw name="Maximize Browser Window" library="SeleniumLibrary">
 <doc>Maximizes current browser window.</doc>
-<status status="PASS" starttime="20230118 15:48:27.364" endtime="20230118 15:48:27.503"/>
+<status status="PASS" starttime="20230119 11:14:04.949" endtime="20230119 11:14:05.080"/>
 </kw>
 <kw name="Set Selenium Implicit Wait" library="SeleniumLibrary">
 <arg>10s</arg>
 <doc>Sets the implicit wait value used by Selenium.</doc>
-<status status="PASS" starttime="20230118 15:48:27.504" endtime="20230118 15:48:27.507"/>
+<status status="PASS" starttime="20230119 11:14:05.081" endtime="20230119 11:14:05.096"/>
 </kw>
 <kw name="Go To" library="SeleniumLibrary">
-<arg>url=https://www.facebook.com</arg>
+<arg>url=https://nasscom.in</arg>
 <doc>Navigates the current browser window to the provided ``url``.</doc>
-<msg timestamp="20230118 15:48:27.507" level="INFO">Opening url 'https://www.facebook.com'</msg>
-<status status="PASS" starttime="20230118 15:48:27.507" endtime="20230118 15:48:29.812"/>
+<msg timestamp="20230119 11:14:05.097" level="INFO">Opening url 'https://nasscom.in'</msg>
+<status status="PASS" starttime="20230119 11:14:05.096" endtime="20230119 11:14:32.346"/>
 </kw>
-<kw name="Input Text" library="SeleniumLibrary">
-<arg>css=#email</arg>
-<arg>aparna.com</arg>
-<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<msg timestamp="20230118 15:48:29.814" level="INFO">Typing text 'aparna.com' into text field 'css=#email'.</msg>
-<status status="PASS" starttime="20230118 15:48:29.812" endtime="20230118 15:48:29.920"/>
+<kw name="Get WebElement" library="SeleniumLibrary">
+<var>${ele}</var>
+<arg>xpath=//a[text()='Members Listing']</arg>
+<doc>Returns the first WebElement matching the given ``locator``.</doc>
+<msg timestamp="20230119 11:14:32.370" level="INFO">${ele} = &lt;selenium.webdriver.remote.webelement.WebElement (session="4fe297fd39530b525334a25a0ce95590", element="f7961537-7994-4ee2-90ce-a6080ed3b3ea")&gt;</msg>
+<status status="PASS" starttime="20230119 11:14:32.346" endtime="20230119 11:14:32.371"/>
 </kw>
-<kw name="Input Text" library="SeleniumLibrary">
-<arg>css=#pass</arg>
-<arg>welcome123</arg>
-<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<msg timestamp="20230118 15:48:29.921" level="INFO">Typing text 'welcome123' into text field 'css=#pass'.</msg>
-<status status="PASS" starttime="20230118 15:48:29.921" endtime="20230118 15:48:30.048"/>
+<kw name="Execute Javascript" library="SeleniumLibrary">
+<arg>arguments[0].click()</arg>
+<arg>ARGUMENTS</arg>
+<arg>${ele}</arg>
+<doc>Executes the given JavaScript code with possible arguments.</doc>
+<msg timestamp="20230119 11:14:32.374" level="INFO">Executing JavaScript:
+arguments[0].click()
+By using argument:
+'&lt;selenium.webdriver.remote.webelement.WebElement (session="4fe297fd39530b525334a25a0ce95590", element="f7961537-7994-4ee2-90ce-a6080ed3b3ea")&gt;'</msg>
+<status status="PASS" starttime="20230119 11:14:32.371" endtime="20230119 11:14:38.898"/>
 </kw>
-<kw name="Click Element" library="SeleniumLibrary">
-<arg>css =button[name='login']</arg>
-<doc>Click the element identified by ``locator``.</doc>
-<msg timestamp="20230118 15:48:30.049" level="INFO">Clicking element 'css =button[name='login']'.</msg>
-<status status="PASS" starttime="20230118 15:48:30.048" endtime="20230118 15:48:30.127"/>
-</kw>
-<status status="PASS" starttime="20230118 15:48:24.503" endtime="20230118 15:48:30.127"/>
+<status status="PASS" starttime="20230119 11:14:03.234" endtime="20230119 11:14:38.898"/>
 </test>
-<status status="PASS" starttime="20230118 15:48:24.138" endtime="20230118 15:48:30.128"/>
+<status status="PASS" starttime="20230119 11:14:02.868" endtime="20230119 11:14:38.900"/>
 </suite>
 <statistics>
 <total>
