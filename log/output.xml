@@ -1,56 +1,125 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<robot generator="Robot 6.0.2 (Python 3.11.1 on win32)" generated="20230119 17:13:21.790" rpa="false" schemaversion="3">
-<suite id="s1" name="Demo9 Alert" source="C:\robot_project\selenium_suite\demo9_alert.robot">
-<test id="s1-t1" name="TC1" line="5">
-<kw name="Open Browser" library="SeleniumLibrary">
-<arg>browser=chrome</arg>
-<doc>Opens a new browser instance to the optional ``url``.</doc>
-<msg timestamp="20230119 17:13:22.146" level="INFO">Opening browser 'chrome' to base url 'None'.</msg>
-<status status="PASS" starttime="20230119 17:13:22.130" endtime="20230119 17:13:24.018"/>
+<robot generator="Robot 6.0.2 (Python 3.11.1 on win32)" generated="20230120 11:57:21.368" rpa="false" schemaversion="3">
+<suite id="s1" name="Demo1 App Launch" source="C:\robot_project\appium_suite\demo1_app_launch.robot">
+<test id="s1-t1" name="TC2" line="20">
+<kw name="Open Application" library="AppiumLibrary">
+<arg>remote_url=http://localhost:4723/wd/hub</arg>
+<arg>platformName=android</arg>
+<arg>deviceName=redminote5pro</arg>
+<arg>app=C:${/}components${/}khan-academy-7-3-2.apk</arg>
+<doc>Opens a new application to given Appium server.
+Capabilities of appium server, Android and iOS,
+Please check https://github.com/appium/appium/blob/master/docs/en/writing-running-appium/server-args.md
+| *Option*            | *Man.* | *Description*     |
+| remote_url          | Yes    | Appium server url |
+| alias               | no     | alias             |
+| strict_ssl          | No     | allows you to send commands to an invalid certificate host like a self-signed one. |</doc>
+<status status="PASS" starttime="20230120 11:57:21.651" endtime="20230120 11:57:40.609"/>
 </kw>
-<kw name="Maximize Browser Window" library="SeleniumLibrary">
-<doc>Maximizes current browser window.</doc>
-<status status="PASS" starttime="20230119 17:13:24.019" endtime="20230119 17:13:24.141"/>
-</kw>
-<kw name="Set Selenium Implicit Wait" library="SeleniumLibrary">
+<kw name="Wait Until Page Contains Element" library="AppiumLibrary">
+<arg>xpath=//*[@text='Dismiss']</arg>
 <arg>30s</arg>
-<doc>Sets the implicit wait value used by Selenium.</doc>
-<status status="PASS" starttime="20230119 17:13:24.141" endtime="20230119 17:13:24.144"/>
+<doc>Waits until element specified with `locator` appears on current page.</doc>
+<msg timestamp="20230120 11:57:44.760" level="INFO">xpath criteria: //*[@text='Dismiss']
+xpath criteria: //*[@text='Dismiss']
+xpath criteria: //*[@text='Dismiss']
+xpath criteria: //*[@text='Dismiss']</msg>
+<status status="PASS" starttime="20230120 11:57:40.609" endtime="20230120 11:57:44.771"/>
 </kw>
-<kw name="Go To" library="SeleniumLibrary">
-<arg>url=https://netbanking.hdfcbank.com/netbanking/IpinResetUsingOTP.htm</arg>
-<doc>Navigates the current browser window to the provided ``url``.</doc>
-<msg timestamp="20230119 17:13:24.145" level="INFO">Opening url 'https://netbanking.hdfcbank.com/netbanking/IpinResetUsingOTP.htm'</msg>
-<status status="PASS" starttime="20230119 17:13:24.144" endtime="20230119 17:13:24.991"/>
+<kw name="Click Element" library="AppiumLibrary">
+<arg>xpath=//*[@text='Dismiss']</arg>
+<doc>Click element identified by `locator`.</doc>
+<msg timestamp="20230120 11:57:44.771" level="INFO">Clicking element 'xpath=//*[@text='Dismiss']'.</msg>
+<msg timestamp="20230120 11:57:45.101" level="INFO">xpath criteria: //*[@text='Dismiss']</msg>
+<status status="PASS" starttime="20230120 11:57:44.771" endtime="20230120 11:57:45.101"/>
 </kw>
-<kw name="Click Element" library="SeleniumLibrary">
-<arg>xpath=//img[@alt='Go']</arg>
-<doc>Click the element identified by ``locator``.</doc>
-<msg timestamp="20230119 17:13:24.994" level="INFO">Clicking element 'xpath=//img[@alt='Go']'.</msg>
-<status status="PASS" starttime="20230119 17:13:24.992" endtime="20230119 17:13:25.066"/>
+<kw name="Wait Until Page Contains Element" library="AppiumLibrary">
+<arg>xpath=//*[@text='Sign in']</arg>
+<arg>30s</arg>
+<doc>Waits until element specified with `locator` appears on current page.</doc>
+<msg timestamp="20230120 11:57:45.974" level="INFO">xpath criteria: //*[@text='Sign in']
+xpath criteria: //*[@text='Sign in']</msg>
+<status status="PASS" starttime="20230120 11:57:45.102" endtime="20230120 11:57:45.974"/>
 </kw>
-<kw name="Handle Alert" library="SeleniumLibrary">
-<var>${alert_text}</var>
-<arg>action=ACCEPT</arg>
-<doc>Handles the current alert and returns its message.</doc>
-<msg timestamp="20230119 17:13:25.067" level="INFO">HANDLE::&lt;class 'NoneType'&gt;::None</msg>
-<msg timestamp="20230119 17:13:25.074" level="INFO">${alert_text} = Customer ID  cannot be left blank.</msg>
-<status status="PASS" starttime="20230119 17:13:25.066" endtime="20230119 17:13:25.074"/>
+<kw name="Click Element" library="AppiumLibrary">
+<arg>xpath=//*[@text='Sign in']</arg>
+<doc>Click element identified by `locator`.</doc>
+<msg timestamp="20230120 11:57:45.974" level="INFO">Clicking element 'xpath=//*[@text='Sign in']'.</msg>
+<msg timestamp="20230120 11:57:46.224" level="INFO">xpath criteria: //*[@text='Sign in']</msg>
+<status status="PASS" starttime="20230120 11:57:45.974" endtime="20230120 11:57:46.224"/>
 </kw>
-<kw name="Log To Console" library="BuiltIn">
-<arg>${alert_text}</arg>
-<doc>Logs the given message to the console.</doc>
-<status status="PASS" starttime="20230119 17:13:25.074" endtime="20230119 17:13:25.075"/>
+<kw name="Wait Until Page Contains Element" library="AppiumLibrary">
+<arg>xpath=//android.widget.TextView[@text='Sign in']</arg>
+<arg>30s</arg>
+<doc>Waits until element specified with `locator` appears on current page.</doc>
+<msg timestamp="20230120 11:57:47.209" level="INFO">xpath criteria: //android.widget.TextView[@text='Sign in']
+xpath criteria: //android.widget.TextView[@text='Sign in']</msg>
+<status status="PASS" starttime="20230120 11:57:46.224" endtime="20230120 11:57:47.209"/>
 </kw>
-<kw name="Should Be Equal" library="BuiltIn">
-<arg>${alert_text}</arg>
-<arg>Customer ID${SPACE}${SPACE}cannot be left blank.</arg>
-<doc>Fails if the given objects are unequal.</doc>
-<status status="PASS" starttime="20230119 17:13:25.076" endtime="20230119 17:13:25.077"/>
+<kw name="Click Element" library="AppiumLibrary">
+<arg>xpath=//android.widget.TextView[@text='Sign in']</arg>
+<doc>Click element identified by `locator`.</doc>
+<msg timestamp="20230120 11:57:47.225" level="INFO">Clicking element 'xpath=//android.widget.TextView[@text='Sign in']'.</msg>
+<msg timestamp="20230120 11:57:48.182" level="INFO">xpath criteria: //android.widget.TextView[@text='Sign in']</msg>
+<status status="PASS" starttime="20230120 11:57:47.209" endtime="20230120 11:57:48.182"/>
 </kw>
-<status status="PASS" starttime="20230119 17:13:22.130" endtime="20230119 17:13:25.077"/>
+<kw name="Wait Until Page Contains Element" library="AppiumLibrary">
+<arg>xpath=//*[@text='Enter an e-mail address or username']</arg>
+<arg>30s</arg>
+<doc>Waits until element specified with `locator` appears on current page.</doc>
+<msg timestamp="20230120 11:57:49.273" level="INFO">xpath criteria: //*[@text='Enter an e-mail address or username']</msg>
+<status status="PASS" starttime="20230120 11:57:48.182" endtime="20230120 11:57:49.273"/>
+</kw>
+<kw name="Input Text" library="AppiumLibrary">
+<arg>xpath=//*[@text='Enter an e-mail address or username']</arg>
+<arg>aparnaml@gmail.com</arg>
+<doc>Types the given `text` into text field identified by `locator`.</doc>
+<msg timestamp="20230120 11:57:49.273" level="INFO">Typing text 'aparnaml@gmail.com' into text field 'xpath=//*[@text='Enter an e-mail address or username']'</msg>
+<msg timestamp="20230120 11:57:50.066" level="INFO">xpath criteria: //*[@text='Enter an e-mail address or username']</msg>
+<status status="PASS" starttime="20230120 11:57:49.273" endtime="20230120 11:57:50.066"/>
+</kw>
+<kw name="Wait Until Page Contains Element" library="AppiumLibrary">
+<arg>xpath=//*[@text='Password']</arg>
+<arg>30s</arg>
+<doc>Waits until element specified with `locator` appears on current page.</doc>
+<msg timestamp="20230120 11:57:50.753" level="INFO">xpath criteria: //*[@text='Password']</msg>
+<status status="PASS" starttime="20230120 11:57:50.066" endtime="20230120 11:57:50.753"/>
+</kw>
+<kw name="Input Text" library="AppiumLibrary">
+<arg>xpath=//*[@text='Password']</arg>
+<arg>sdfgjsuw</arg>
+<doc>Types the given `text` into text field identified by `locator`.</doc>
+<msg timestamp="20230120 11:57:50.753" level="INFO">Typing text 'sdfgjsuw' into text field 'xpath=//*[@text='Password']'</msg>
+<msg timestamp="20230120 11:57:52.119" level="INFO">xpath criteria: //*[@text='Password']</msg>
+<status status="PASS" starttime="20230120 11:57:50.753" endtime="20230120 11:57:52.119"/>
+</kw>
+<kw name="Wait Until Page Contains Element" library="AppiumLibrary">
+<arg>xpath=//*[@text='Sign in']</arg>
+<arg>30s</arg>
+<doc>Waits until element specified with `locator` appears on current page.</doc>
+<msg timestamp="20230120 11:57:52.822" level="INFO">xpath criteria: //*[@text='Sign in']</msg>
+<status status="PASS" starttime="20230120 11:57:52.119" endtime="20230120 11:57:52.822"/>
+</kw>
+<kw name="Click Element" library="AppiumLibrary">
+<arg>xpath=//*[@text='Sign in']</arg>
+<doc>Click element identified by `locator`.</doc>
+<msg timestamp="20230120 11:57:52.822" level="INFO">Clicking element 'xpath=//*[@text='Sign in']'.</msg>
+<msg timestamp="20230120 11:57:53.087" level="INFO">xpath criteria: //*[@text='Sign in']</msg>
+<status status="PASS" starttime="20230120 11:57:52.822" endtime="20230120 11:57:53.087"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>15s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20230120 11:58:08.088" level="INFO">Slept 15 seconds</msg>
+<status status="PASS" starttime="20230120 11:57:53.088" endtime="20230120 11:58:08.088"/>
+</kw>
+<kw name="Close Application" library="AppiumLibrary" type="TEARDOWN">
+<doc>Closes the current application and also close webdriver session.</doc>
+<status status="PASS" starttime="20230120 11:58:08.088" endtime="20230120 11:58:08.774"/>
+</kw>
+<status status="PASS" starttime="20230120 11:57:21.651" endtime="20230120 11:58:08.774"/>
 </test>
-<status status="PASS" starttime="20230119 17:13:21.790" endtime="20230119 17:13:25.079"/>
+<status status="PASS" starttime="20230120 11:57:21.368" endtime="20230120 11:58:08.775"/>
 </suite>
 <statistics>
 <total>
@@ -59,7 +128,7 @@
 <tag>
 </tag>
 <suite>
-<stat pass="1" fail="0" skip="0" id="s1" name="Demo9 Alert">Demo9 Alert</stat>
+<stat pass="1" fail="0" skip="0" id="s1" name="Demo1 App Launch">Demo1 App Launch</stat>
 </suite>
 </statistics>
 <errors>
