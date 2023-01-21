@@ -33,7 +33,11 @@ TC2
     Input Text   xpath=//*[@text='Enter an e-mail address or username']   aparnaml@gmail.com
     Wait Until Page Contains Element   xpath=//*[@text='Password']  30s
     Input Text   xpath=//*[@text='Password']  sdfgjsuw
-    Wait Until Page Contains Element   xpath=//*[@text='Sign in']  30s
-    Click Element   xpath=//*[@text='Sign in']
+    Wait Until Page Contains Element   xpath=(//*[@text='Sign in'])[2]  30s
+    Click Element   xpath=(//*[@text='Sign in'])[2]
+    Wait Until Page Contains Element   xpath=//android.widget.TextView[@text='There was an issue signing in']
+    Element Text Should Be   xpath=//android.widget.TextView[@text='There was an issue signing in']    There was an issue signing in
+    ${page_source}  Get Source
+    Log      ${page_source}
     Sleep    15s
     [Teardown]  Close Application
