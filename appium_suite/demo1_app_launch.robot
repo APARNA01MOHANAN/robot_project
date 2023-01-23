@@ -41,3 +41,10 @@ TC2
     Log      ${page_source}
     Sleep    15s
     [Teardown]  Close Application
+
+
+tc3
+    Open Application   remote_url=http://localhost:4723/wd/hub
+    ...   platformName=android
+    ...   deviceName=redminote5pro
+    ...   app=C:${/}components${/}khan-academy-7-3-2.apk
