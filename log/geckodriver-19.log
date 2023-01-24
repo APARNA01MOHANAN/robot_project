@@ -1,0 +1,18 @@
+1674474529569	geckodriver	INFO	Listening on 127.0.0.1:59574
+1674474532657	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "--remote-debugging-port" "59575" "--remote-allow-hosts" "localhost" "-no-remote" "-profile" "C:\\Users\\40032118\\AppData\\Local\\Temp\\rust_mozprofileRsbEem"
+1674474533106	Marionette	INFO	Marionette enabled
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at C:\\Users\\40032118\\AppData\\Local\\Temp\\rust_mozprofileRsbEem\\search.json.mozlz4", (void 0)))
+DevTools listening on ws://localhost:59575/devtools/browser/632cd96b-bdce-4299-bb97-b4cb30e10f1a
+1674474535595	Marionette	INFO	Listening on port 59599
+Read port: 59599
+1674474535657	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+console.warn: LoginRecipes: "getRecipes: falling back to a synchronous message for:" "http://demo.openemr.io"
+JavaScript error: resource://gre/modules/LoginManagerParent.jsm, line 136: TypeError: gRecipeManager is null
+console.warn: LoginRecipes: "getRecipes: falling back to a synchronous message for:" "http://demo.openemr.io"
+JavaScript error: resource://gre/modules/LoginManagerParent.jsm, line 136: TypeError: gRecipeManager is null
+1674475053644	addons.xpi	ERROR	System addon update list error Error: Failed downloading XML, status: 0, reason: error
+1674476505583	Marionette	INFO	Stopped listening on port 59599
+console.warn: TopSitesFeed: Failed to fetch data from Contile server: NetworkError when attempting to fetch resource.
+
+###!!! [Parent][PGPUParent] Error: RunMessage(msgname=PGPU::Msg_ShutdownVR) Channel closing: too late to send/recv, messages will be lost
+

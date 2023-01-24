@@ -1,0 +1,22 @@
+1674534066842	geckodriver	INFO	Listening on 127.0.0.1:63616
+1674534069957	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "--remote-debugging-port" "63617" "--remote-allow-hosts" "localhost" "-no-remote" "-profile" "C:\\Users\\40032118\\AppData\\Local\\Temp\\rust_mozprofileOl3Ry0"
+1674534070418	Marionette	INFO	Marionette enabled
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at C:\\Users\\40032118\\AppData\\Local\\Temp\\rust_mozprofileOl3Ry0\\search.json.mozlz4", (void 0)))
+DevTools listening on ws://localhost:63617/devtools/browser/d8815e7a-aa22-4eeb-bbdf-ca3cdd4cb14f
+1674534072592	Marionette	INFO	Listening on port 63642
+Read port: 63642
+1674534072666	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+console.warn: LoginRecipes: "getRecipes: falling back to a synchronous message for:" "http://demo.openemr.io"
+JavaScript error: resource://gre/modules/LoginManagerParent.jsm, line 136: TypeError: gRecipeManager is null
+console.warn: LoginRecipes: "getRecipes: falling back to a synchronous message for:" "http://demo.openemr.io"
+JavaScript error: resource://gre/modules/LoginManagerParent.jsm, line 136: TypeError: gRecipeManager is null
+console.warn: LoginRecipes: "getRecipes: falling back to a synchronous message for:" "http://demo.openemr.io"
+JavaScript error: resource://gre/modules/LoginManagerParent.jsm, line 136: TypeError: gRecipeManager is null
+console.warn: LoginRecipes: "getRecipes: falling back to a synchronous message for:" "http://demo.openemr.io"
+JavaScript error: resource://gre/modules/LoginManagerParent.jsm, line 136: TypeError: gRecipeManager is null
+JavaScript error: http://demo.openemr.io/b/openemr/library/js/utility.js?v=71, line 86: Error: Script load error for /b/openemr/public/assets/interactjs/dist/interact.js
+1674536167619	Marionette	INFO	Stopped listening on port 63642
+console.warn: TopSitesFeed: Failed to fetch data from Contile server: NetworkError when attempting to fetch resource.
+
+###!!! [Parent][PGPUParent] Error: RunMessage(msgname=PGPU::Msg_ShutdownVR) Channel closing: too late to send/recv, messages will be lost
+

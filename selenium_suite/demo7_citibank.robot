@@ -1,6 +1,6 @@
 *** Settings ***
 Library  SeleniumLibrary
-
+#input of birthday is different here in citibank
 *** Test Cases ***
 
 TC1 REG

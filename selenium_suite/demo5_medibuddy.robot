@@ -2,7 +2,7 @@
 Library  SeleniumLibrary
 
 *** Test Cases ***
-
+#assignment on meddibuddy and validated incorrect password
 TC1 REG
     Open Browser     browser=ff
     Maximize Browser Window

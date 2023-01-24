@@ -1,6 +1,6 @@
 *** Settings ***
 Library  SeleniumLibrary
-
+#login on ad4free
 *** Test Cases ***
 
 TC1 REG

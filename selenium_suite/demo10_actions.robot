@@ -1,6 +1,6 @@
 *** Settings ***
 Library     SeleniumLibrary
-
+#performed mouse over and handle alert tasks
 *** Test Cases ***
 TC1
     Open Browser    browser=chrome

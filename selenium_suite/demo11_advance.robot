@@ -1,6 +1,6 @@
 *** Settings ***
 Library     SeleniumLibrary
-
+#performed advance concepts like css selector and javascript
 *** Test Cases ***
 TC1
     Open Browser    browser=chrome
@@ -27,7 +27,6 @@ TC3 JAVASCRIPT
     Go To    url=https://www.phptravels.net/
     Click Element   xpath=//span[contain(text(),'Search by City')]
     Input Text    xpath=//input[@class='select2-search__field']  Vadodara
-    Click Element   xpath=
     Execute Javascript   document.querySelector('#checkin').value='30-9-2023'
     Execute Javascript   document.querySelector('#checkout').value='29-11-2023'
     #Execute Javascript   document.querySelector('#select2-hotels_city-container').value='VADODARA'

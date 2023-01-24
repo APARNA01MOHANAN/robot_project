@@ -1,6 +1,6 @@
 *** Settings ***
 Library     SeleniumLibrary
-
+#handle alert
 *** Test Cases ***
 TC1
     Open Browser    browser=chrome

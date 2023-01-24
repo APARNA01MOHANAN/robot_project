@@ -3,6 +3,7 @@ Library  SeleniumLibrary
 
 *** Test Cases ***
 
+#performed a trail login in salesforce and validated the popup
 TC1 REG
     Open Browser     browser=chrome
     Maximize Browser Window

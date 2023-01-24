@@ -1,6 +1,6 @@
 *** Settings ***
 Library  SeleniumLibrary
-
+#basic operations of robot framework using selenium
 
 *** Test Cases ***
 TS1

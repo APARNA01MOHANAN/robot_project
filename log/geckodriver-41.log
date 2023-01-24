@@ -1,0 +1,22 @@
+1674534030483	geckodriver	INFO	Listening on 127.0.0.1:63548
+1674534033541	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "--remote-debugging-port" "63549" "--remote-allow-hosts" "localhost" "-no-remote" "-profile" "C:\\Users\\40032118\\AppData\\Local\\Temp\\rust_mozprofileedJw1Q"
+1674534033995	Marionette	INFO	Marionette enabled
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at C:\\Users\\40032118\\AppData\\Local\\Temp\\rust_mozprofileedJw1Q\\search.json.mozlz4", (void 0)))
+DevTools listening on ws://localhost:63549/devtools/browser/23a8b076-e9a2-40e7-85d3-37628c90fa3b
+1674534036220	Marionette	INFO	Listening on port 63573
+Read port: 63573
+1674534036252	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+console.warn: LoginRecipes: "getRecipes: falling back to a synchronous message for:" "http://demo.openemr.io"
+console.warn: LoginRecipes: "getRecipes: falling back to a synchronous message for:" "http://demo.openemr.io"
+JavaScript error: resource://gre/modules/LoginManagerParent.jsm, line 136: TypeError: gRecipeManager is null
+console.warn: LoginRecipes: "getRecipes: falling back to a synchronous message for:" "http://demo.openemr.io"
+JavaScript error: resource://gre/modules/LoginManagerParent.jsm, line 136: TypeError: gRecipeManager is null
+console.warn: LoginRecipes: "getRecipes: falling back to a synchronous message for:" "http://demo.openemr.io"
+JavaScript error: resource://gre/modules/LoginManagerParent.jsm, line 136: TypeError: gRecipeManager is null
+JavaScript error: http://demo.openemr.io/b/openemr/library/js/utility.js?v=71, line 86: Error: Script load error for /b/openemr/public/assets/interactjs/dist/interact.js
+Marionette threw an error: TypeError: browsingContext.currentWindowGlobal is null
+getMarionetteCommandsActorProxy/get/<@chrome://remote/content/marionette/actors/MarionetteCommandsParent.jsm:332:29
+GeckoDriver.prototype.takeScreenshot@chrome://remote/content/marionette/driver.js:2194:26
+
+1674536176061	Marionette	INFO	Stopped listening on port 63573
+console.warn: TopSitesFeed: Failed to fetch data from Contile server: NetworkError when attempting to fetch resource.

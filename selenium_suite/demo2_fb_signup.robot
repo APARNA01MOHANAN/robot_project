@@ -1,6 +1,6 @@
 *** Settings ***
 Library  SeleniumLibrary
-
+#performed basic signup task in facebook
 *** Test Cases ***
 
 TC1 Register

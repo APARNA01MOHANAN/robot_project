@@ -1,0 +1,13 @@
+1674475246762	geckodriver	INFO	Listening on 127.0.0.1:53653
+1674475249870	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "--remote-debugging-port" "53654" "--remote-allow-hosts" "localhost" "-no-remote" "-profile" "C:\\Users\\40032118\\AppData\\Local\\Temp\\rust_mozprofile4zcLaV"
+1674475250408	Marionette	INFO	Marionette enabled
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at C:\\Users\\40032118\\AppData\\Local\\Temp\\rust_mozprofile4zcLaV\\search.json.mozlz4", (void 0)))
+DevTools listening on ws://localhost:53654/devtools/browser/6ba0d3fc-72a0-48f9-9279-1d32cc8e40d1
+1674475253022	Marionette	INFO	Listening on port 53680
+Read port: 53680
+1674475253101	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+console.warn: LoginRecipes: "getRecipes: falling back to a synchronous message for:" "http://demo.openemr.io"
+console.warn: LoginRecipes: "getRecipes: falling back to a synchronous message for:" "http://demo.openemr.io"
+JavaScript error: resource://gre/modules/LoginManagerParent.jsm, line 136: TypeError: gRecipeManager is null
+1674476507356	Marionette	INFO	Stopped listening on port 53680
+console.warn: TopSitesFeed: Failed to fetch data from Contile server: NetworkError when attempting to fetch resource.

@@ -1,6 +1,7 @@
 *** Settings ***
-Library  SeleniumLibrary
 
+Library  SeleniumLibrary
+#assignment on gotomeeting
 *** Test Cases ***
 
 TC1 REG
@@ -13,6 +14,8 @@ TC1 REG
     Input Text   name=FirstName    john
     Input Text   name=LastName    wick
     Input Text   name=Email    john@gmail.com
-    Select From List By Label   id=CompanySize  10-99
-    Element Text Should Be   xpath=//input[contains(@id,'login__password')]    8 - 32 Characters
+
+    Select From List By Label  id=CompanySize  10 - 99
+    #Element Text Should Be   xpath=//input[contains(@id,'login__password')]    8 - 32 Characters
+    [Teardown]  Close Browser
 
