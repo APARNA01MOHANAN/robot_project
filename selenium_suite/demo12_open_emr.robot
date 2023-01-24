@@ -19,7 +19,7 @@ TC1 REG
     Click Element   name=form_lname
     Input Text   name=form_lname    Mohanan
     Click Element   name=form_DOB
-    Input Text   name=form_DOB    2001-03-16
+    Input Text   name=form_DOB    24/01/2023
     Select From List By Label  xpath=//select[@name='form_sex']  Female
     Select From List By Label  xpath=//select[@name='form_gender_identity']  Identifies as Female
     Click Element   name=create

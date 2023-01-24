@@ -1,6 +1,7 @@
 *** Settings ***
 Library  DateTime
 
+#basic operations of printing text in console
 
 *** Test Cases ***
 TC1

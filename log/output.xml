@@ -1,82 +1,64 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<robot generator="Robot 6.0.2 (Python 3.11.1 on win32)" generated="20230124 11:20:01.650" rpa="false" schemaversion="3">
-<suite id="s1" name="Demo4 Gotomeeting" source="C:\robot_project\selenium_suite\demo4_gotomeeting.robot">
-<test id="s1-t1" name="TC1 REG" line="7">
-<kw name="Open Browser" library="SeleniumLibrary">
-<arg>browser=chrome</arg>
-<doc>Opens a new browser instance to the optional ``url``.</doc>
-<msg timestamp="20230124 11:20:01.945" level="INFO">Opening browser 'chrome' to base url 'None'.</msg>
-<status status="PASS" starttime="20230124 11:20:01.945" endtime="20230124 11:20:03.654"/>
+<robot generator="Robot 6.0.2 (Python 3.11.1 on win32)" generated="20230124 17:15:51.193" rpa="false" schemaversion="3">
+<suite id="s1" name="Demo1 Android App" source="C:\robot_project\assessment\demo1_android_app.robot">
+<test id="s1-t1" name="TC1 Swipe" line="8">
+<kw name="Open Application" library="AppiumLibrary">
+<arg>remote_url=http://localhost:4723/wd/hub</arg>
+<arg>platformName=android</arg>
+<arg>deviceName=redminote5pro</arg>
+<arg>appPackage=com.healthifyme.basic</arg>
+<arg>versionName=v18.11</arg>
+<arg>noReset=true</arg>
+<doc>Opens a new application to given Appium server.
+Capabilities of appium server, Android and iOS,
+Please check https://github.com/appium/appium/blob/master/docs/en/writing-running-appium/server-args.md
+| *Option*            | *Man.* | *Description*     |
+| remote_url          | Yes    | Appium server url |
+| alias               | no     | alias             |
+| strict_ssl          | No     | allows you to send commands to an invalid certificate host like a self-signed one. |</doc>
+<kw name="Capture Page Screenshot" library="AppiumLibrary">
+<doc>Takes a screenshot of the current page and embeds it into the log.</doc>
+<msg timestamp="20230124 17:16:05.134" level="FAIL">No application is open</msg>
+<status status="FAIL" starttime="20230124 17:16:05.132" endtime="20230124 17:16:05.142"/>
 </kw>
-<kw name="Maximize Browser Window" library="SeleniumLibrary">
-<doc>Maximizes current browser window.</doc>
-<status status="PASS" starttime="20230124 11:20:03.654" endtime="20230124 11:20:03.774"/>
+<msg timestamp="20230124 17:16:05.144" level="WARN">Keyword 'Capture Page Screenshot' could not be run on failure: No application is open</msg>
+<msg timestamp="20230124 17:16:05.146" level="FAIL">WebDriverException: Message: An unknown server-side error occurred while processing the command. Original error: Cannot start the 'com.healthifyme.basic' application. Visit https://github.com/appium/appium/blob/master/docs/en/writing-running-appium/android/activity-startup.md for troubleshooting. Original error: Error executing adbExec. Original error: 'Command 'C:\\Users\\40032118\\AppData\\Local\\Android\\Sdk\\platform-tools\\adb.exe -P 5037 -s 51d4c427 shell am start -W -S -a android.intent.action.MAIN -c android.intent.category.LAUNCHER -f 0x10200000' exited with code 1'; Command output: Error: Intent does not match any activities: Intent { act=android.intent.action.MAIN cat=[android.intent.category.LAUNCHER] flg=0x10200000 }
+
+Stacktrace:
+UnknownError: An unknown server-side error occurred while processing the command. Original error: Cannot start the 'com.healthifyme.basic' application. Visit https://github.com/appium/appium/blob/master/docs/en/writing-running-appium/android/activity-startup.md for troubleshooting. Original error: Error executing adbExec. Original error: 'Command 'C:\\Users\\40032118\\AppData\\Local\\Android\\Sdk\\platform-tools\\adb.exe -P 5037 -s 51d4c427 shell am start -W -S -a android.intent.action.MAIN -c android.intent.category.LAUNCHER -f 0x10200000' exited with code 1'; Command output: Error: Intent does not match any activities: Intent { act=android.intent.action.MAIN cat=[android.intent.category.LAUNCHER] flg=0x10200000 }
+
+    at getResponseForW3CError (C:\components\Appium-Server-GUI-windows-1.22.3-4\resources\app\node_modules\appium\node_modules\appium-base-driver\lib\protocol\errors.js:804:9)
+    at asyncHandler (C:\components\Appium-Server-GUI-windows-1.22.3-4\resources\app\node_modules\appium\node_modules\appium-base-driver\lib\protocol\protocol.js:380:37)</msg>
+<status status="FAIL" starttime="20230124 17:15:51.512" endtime="20230124 17:16:05.149"/>
 </kw>
-<kw name="Set Browser Implicit Wait" library="SeleniumLibrary">
-<arg>30s</arg>
-<doc>Sets the implicit wait value used by Selenium.</doc>
-<status status="PASS" starttime="20230124 11:20:03.775" endtime="20230124 11:20:03.779"/>
+<kw name="Set Appium Timeout" library="AppiumLibrary">
+<arg>20s</arg>
+<doc>Sets the timeout in seconds used by various keywords.</doc>
+<status status="NOT RUN" starttime="20230124 17:16:05.150" endtime="20230124 17:16:05.150"/>
 </kw>
-<kw name="Go To" library="SeleniumLibrary">
-<arg>url=https://www.goto.com/meeting/</arg>
-<doc>Navigates the current browser window to the provided ``url``.</doc>
-<msg timestamp="20230124 11:20:03.781" level="INFO">Opening url 'https://www.goto.com/meeting/'</msg>
-<status status="PASS" starttime="20230124 11:20:03.780" endtime="20230124 11:20:17.127"/>
-</kw>
-<kw name="Click Element" library="SeleniumLibrary">
-<arg>id=truste-consent-button</arg>
-<doc>Click the element identified by ``locator``.</doc>
-<msg timestamp="20230124 11:20:17.130" level="INFO">Clicking element 'id=truste-consent-button'.</msg>
-<status status="PASS" starttime="20230124 11:20:17.128" endtime="20230124 11:20:17.263"/>
-</kw>
-<kw name="Click Element" library="SeleniumLibrary">
-<arg>link=Try Free</arg>
-<doc>Click the element identified by ``locator``.</doc>
-<msg timestamp="20230124 11:20:17.264" level="INFO">Clicking element 'link=Try Free'.</msg>
-<status status="PASS" starttime="20230124 11:20:17.264" endtime="20230124 11:20:20.211"/>
-</kw>
-<kw name="Input Text" library="SeleniumLibrary">
-<arg>name=FirstName</arg>
-<arg>john</arg>
-<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<msg timestamp="20230124 11:20:20.212" level="INFO">Typing text 'john' into text field 'name=FirstName'.</msg>
-<status status="PASS" starttime="20230124 11:20:20.211" endtime="20230124 11:20:20.393"/>
-</kw>
-<kw name="Input Text" library="SeleniumLibrary">
-<arg>name=LastName</arg>
-<arg>wick</arg>
-<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<msg timestamp="20230124 11:20:20.395" level="INFO">Typing text 'wick' into text field 'name=LastName'.</msg>
-<status status="PASS" starttime="20230124 11:20:20.393" endtime="20230124 11:20:20.541"/>
-</kw>
-<kw name="Input Text" library="SeleniumLibrary">
-<arg>name=Email</arg>
-<arg>john@gmail.com</arg>
-<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<msg timestamp="20230124 11:20:20.542" level="INFO">Typing text 'john@gmail.com' into text field 'name=Email'.</msg>
-<status status="PASS" starttime="20230124 11:20:20.541" endtime="20230124 11:20:20.702"/>
-</kw>
-<kw name="Select From List By Label" library="SeleniumLibrary">
-<arg>id=CompanySize</arg>
-<arg>10 - 99</arg>
-<doc>Selects options from selection list ``locator`` by ``labels``.</doc>
-<msg timestamp="20230124 11:20:20.703" level="INFO">Selecting options from selection list 'id=CompanySize' by label 10 - 99.</msg>
-<status status="PASS" starttime="20230124 11:20:20.702" endtime="20230124 11:20:20.825"/>
-</kw>
-<status status="PASS" starttime="20230124 11:20:01.945" endtime="20230124 11:20:20.825"/>
+<doc>working with native app
+for automating sign up activity</doc>
+<status status="FAIL" starttime="20230124 17:15:51.512" endtime="20230124 17:16:05.151">WebDriverException: Message: An unknown server-side error occurred while processing the command. Original error: Cannot start the 'com.healthifyme.basic' application. Visit https://github.com/appium/appium/blob/master/docs/en/writing-running-appium/android/activity-startup.md for troubleshooting. Original error: Error executing adbExec. Original error: 'Command 'C:\\Users\\40032118\\AppData\\Local\\Android\\Sdk\\platform-tools\\adb.exe -P 5037 -s 51d4c427 shell am start -W -S -a android.intent.action.MAIN -c android.intent.category.LAUNCHER -f 0x10200000' exited with code 1'; Command output: Error: Intent does not match any activities: Intent { act=android.intent.action.MAIN cat=[android.intent.category.LAUNCHER] flg=0x10200000 }
+
+Stacktrace:
+UnknownError: An unknown server-side error occurred while processing the command. Original error: Cannot start the 'com.healthifyme.basic' application. Visit https://github.com/appium/appium/blob/master/docs/en/writing-running-appium/android/activity-startup.md for troubleshooting. Original error: Error executing adbExec. Original error: 'Command 'C:\\Users\\40032118\\AppData\\Local\\Android\\Sdk\\platform-tools\\adb.exe -P 5037 -s 51d4c427 shell am start -W -S -a android.intent.action.MAIN -c android.intent.category.LAUNCHER -f 0x10200000' exited with code 1'; Command output: Error: Intent does not match any activities: Intent { act=android.intent.action.MAIN cat=[android.intent.category.LAUNCHER] flg=0x10200000 }
+
+    at getResponseForW3CError (C:\components\Appium-Server-GUI-windows-1.22.3-4\resources\app\node_modules\appium\node_modules\appium-base-driver\lib\protocol\errors.js:804:9)
+    at asyncHandler (C:\components\Appium-Server-GUI-windows-1.22.3-4\resources\app\node_modules\appium\node_modules\appium-base-driver\lib\protocol\protocol.js:380:37)</status>
 </test>
-<status status="PASS" starttime="20230124 11:20:01.650" endtime="20230124 11:20:20.827"/>
+<status status="FAIL" starttime="20230124 17:15:51.193" endtime="20230124 17:16:05.152"/>
 </suite>
 <statistics>
 <total>
-<stat pass="1" fail="0" skip="0">All Tests</stat>
+<stat pass="0" fail="1" skip="0">All Tests</stat>
 </total>
 <tag>
 </tag>
 <suite>
-<stat pass="1" fail="0" skip="0" id="s1" name="Demo4 Gotomeeting">Demo4 Gotomeeting</stat>
+<stat pass="0" fail="1" skip="0" id="s1" name="Demo1 Android App">Demo1 Android App</stat>
 </suite>
 </statistics>
 <errors>
+<msg timestamp="20230124 17:16:05.144" level="WARN">Keyword 'Capture Page Screenshot' could not be run on failure: No application is open</msg>
 </errors>
 </robot>
