@@ -1,14 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<robot generator="Robot 6.0.2 (Python 3.11.1 on win32)" generated="20230124 17:15:51.193" rpa="false" schemaversion="3">
+<robot generator="Robot 6.0.2 (Python 3.11.1 on win32)" generated="20230125 16:58:43.068" rpa="false" schemaversion="3">
 <suite id="s1" name="Demo1 Android App" source="C:\robot_project\assessment\demo1_android_app.robot">
 <test id="s1-t1" name="TC1 Swipe" line="8">
 <kw name="Open Application" library="AppiumLibrary">
 <arg>remote_url=http://localhost:4723/wd/hub</arg>
 <arg>platformName=android</arg>
 <arg>deviceName=redminote5pro</arg>
-<arg>appPackage=com.healthifyme.basic</arg>
-<arg>versionName=v18.11</arg>
-<arg>noReset=true</arg>
+<arg>appPackage=org.coursera.android</arg>
+<arg>appActivity=org.coursera.android.MainActivity</arg>
 <doc>Opens a new application to given Appium server.
 Capabilities of appium server, Android and iOS,
 Please check https://github.com/appium/appium/blob/master/docs/en/writing-running-appium/server-args.md
@@ -16,49 +15,236 @@ Please check https://github.com/appium/appium/blob/master/docs/en/writing-runnin
 | remote_url          | Yes    | Appium server url |
 | alias               | no     | alias             |
 | strict_ssl          | No     | allows you to send commands to an invalid certificate host like a self-signed one. |</doc>
-<kw name="Capture Page Screenshot" library="AppiumLibrary">
-<doc>Takes a screenshot of the current page and embeds it into the log.</doc>
-<msg timestamp="20230124 17:16:05.134" level="FAIL">No application is open</msg>
-<status status="FAIL" starttime="20230124 17:16:05.132" endtime="20230124 17:16:05.142"/>
-</kw>
-<msg timestamp="20230124 17:16:05.144" level="WARN">Keyword 'Capture Page Screenshot' could not be run on failure: No application is open</msg>
-<msg timestamp="20230124 17:16:05.146" level="FAIL">WebDriverException: Message: An unknown server-side error occurred while processing the command. Original error: Cannot start the 'com.healthifyme.basic' application. Visit https://github.com/appium/appium/blob/master/docs/en/writing-running-appium/android/activity-startup.md for troubleshooting. Original error: Error executing adbExec. Original error: 'Command 'C:\\Users\\40032118\\AppData\\Local\\Android\\Sdk\\platform-tools\\adb.exe -P 5037 -s 51d4c427 shell am start -W -S -a android.intent.action.MAIN -c android.intent.category.LAUNCHER -f 0x10200000' exited with code 1'; Command output: Error: Intent does not match any activities: Intent { act=android.intent.action.MAIN cat=[android.intent.category.LAUNCHER] flg=0x10200000 }
-
-Stacktrace:
-UnknownError: An unknown server-side error occurred while processing the command. Original error: Cannot start the 'com.healthifyme.basic' application. Visit https://github.com/appium/appium/blob/master/docs/en/writing-running-appium/android/activity-startup.md for troubleshooting. Original error: Error executing adbExec. Original error: 'Command 'C:\\Users\\40032118\\AppData\\Local\\Android\\Sdk\\platform-tools\\adb.exe -P 5037 -s 51d4c427 shell am start -W -S -a android.intent.action.MAIN -c android.intent.category.LAUNCHER -f 0x10200000' exited with code 1'; Command output: Error: Intent does not match any activities: Intent { act=android.intent.action.MAIN cat=[android.intent.category.LAUNCHER] flg=0x10200000 }
-
-    at getResponseForW3CError (C:\components\Appium-Server-GUI-windows-1.22.3-4\resources\app\node_modules\appium\node_modules\appium-base-driver\lib\protocol\errors.js:804:9)
-    at asyncHandler (C:\components\Appium-Server-GUI-windows-1.22.3-4\resources\app\node_modules\appium\node_modules\appium-base-driver\lib\protocol\protocol.js:380:37)</msg>
-<status status="FAIL" starttime="20230124 17:15:51.512" endtime="20230124 17:16:05.149"/>
+<status status="PASS" starttime="20230125 16:58:43.372" endtime="20230125 16:58:57.410"/>
 </kw>
 <kw name="Set Appium Timeout" library="AppiumLibrary">
-<arg>20s</arg>
+<arg>30s</arg>
 <doc>Sets the timeout in seconds used by various keywords.</doc>
-<status status="NOT RUN" starttime="20230124 17:16:05.150" endtime="20230124 17:16:05.150"/>
+<status status="PASS" starttime="20230125 16:58:57.410" endtime="20230125 16:58:57.411"/>
+</kw>
+<kw name="Wait Until Page Contains Element" library="AppiumLibrary">
+<arg>xpath=//android.widget.Button[@text='New to Coursera? Create Account']</arg>
+<doc>Waits until element specified with `locator` appears on current page.</doc>
+<msg timestamp="20230125 16:59:03.946" level="INFO">xpath criteria: //android.widget.Button[@text='New to Coursera? Create Account']
+xpath criteria: //android.widget.Button[@text='New to Coursera? Create Account']
+xpath criteria: //android.widget.Button[@text='New to Coursera? Create Account']
+xpath criteria: //android.widget.Button[@text='New to Coursera? Create Account']
+xpath criteria: //android.widget.Button[@text='New to Coursera? Create Account']
+xpath criteria: //android.widget.Button[@text='New to Coursera? Create Account']
+xpath criteria: //android.widget.Button[@text='New to Coursera? Create Account']
+xpath criteria: //android.widget.Button[@text='New to Coursera? Create Account']
+xpath criteria: //android.widget.Button[@text='New to Coursera? Create Account']
+xpath criteria: //android.widget.Button[@text='New to Coursera? Create Account']
+xpath criteria: //android.widget.Button[@text='New to Coursera? Create Account']
+xpath criteria: //android.widget.Button[@text='New to Coursera? Create Account']</msg>
+<status status="PASS" starttime="20230125 16:58:57.411" endtime="20230125 16:59:03.950"/>
+</kw>
+<kw name="Click Element" library="AppiumLibrary">
+<arg>xpath=//android.widget.Button[@text='New to Coursera? Create Account']</arg>
+<doc>Click element identified by `locator`.</doc>
+<msg timestamp="20230125 16:59:03.950" level="INFO">Clicking element 'xpath=//android.widget.Button[@text='New to Coursera? Create Account']'.</msg>
+<msg timestamp="20230125 16:59:05.031" level="INFO">xpath criteria: //android.widget.Button[@text='New to Coursera? Create Account']</msg>
+<status status="PASS" starttime="20230125 16:59:03.950" endtime="20230125 16:59:05.031"/>
+</kw>
+<kw name="Wait Until Page Contains Element" library="AppiumLibrary">
+<arg>xpath=//android.widget.EditText[@text='Full Name (Required)']</arg>
+<doc>Waits until element specified with `locator` appears on current page.</doc>
+<msg timestamp="20230125 16:59:05.391" level="INFO">xpath criteria: //android.widget.EditText[@text='Full Name (Required)']</msg>
+<status status="PASS" starttime="20230125 16:59:05.031" endtime="20230125 16:59:05.391"/>
+</kw>
+<kw name="Input Text" library="AppiumLibrary">
+<arg>xpath=//android.widget.EditText[@text='Full Name (Required)']</arg>
+<arg>APARNA MOHANAN</arg>
+<doc>Types the given `text` into text field identified by `locator`.</doc>
+<msg timestamp="20230125 16:59:05.391" level="INFO">Typing text 'APARNA MOHANAN' into text field 'xpath=//android.widget.EditText[@text='Full Name (Required)']'</msg>
+<msg timestamp="20230125 16:59:06.797" level="INFO">xpath criteria: //android.widget.EditText[@text='Full Name (Required)']</msg>
+<status status="PASS" starttime="20230125 16:59:05.391" endtime="20230125 16:59:06.797"/>
+</kw>
+<kw name="Wait Until Page Contains Element" library="AppiumLibrary">
+<arg>xpath=//android.widget.EditText[@text='E-mail (Required)']</arg>
+<doc>Waits until element specified with `locator` appears on current page.</doc>
+<msg timestamp="20230125 16:59:07.484" level="INFO">xpath criteria: //android.widget.EditText[@text='E-mail (Required)']</msg>
+<status status="PASS" starttime="20230125 16:59:06.797" endtime="20230125 16:59:07.484"/>
+</kw>
+<kw name="Input Text" library="AppiumLibrary">
+<arg>xpath=//android.widget.EditText[@text='E-mail (Required)']</arg>
+<arg>aparna123@gmail.com</arg>
+<doc>Types the given `text` into text field identified by `locator`.</doc>
+<msg timestamp="20230125 16:59:07.484" level="INFO">Typing text 'aparna123@gmail.com' into text field 'xpath=//android.widget.EditText[@text='E-mail (Required)']'</msg>
+<msg timestamp="20230125 16:59:07.713" level="INFO">xpath criteria: //android.widget.EditText[@text='E-mail (Required)']</msg>
+<status status="PASS" starttime="20230125 16:59:07.484" endtime="20230125 16:59:07.713"/>
+</kw>
+<kw name="Wait Until Page Contains Element" library="AppiumLibrary">
+<arg>xpath=//android.widget.EditText[@text='Password (Required)']</arg>
+<doc>Waits until element specified with `locator` appears on current page.</doc>
+<msg timestamp="20230125 16:59:08.624" level="INFO">xpath criteria: //android.widget.EditText[@text='Password (Required)']</msg>
+<status status="PASS" starttime="20230125 16:59:07.713" endtime="20230125 16:59:08.624"/>
+</kw>
+<kw name="Input Text" library="AppiumLibrary">
+<arg>xpath=//android.widget.EditText[@text='Password (Required)']</arg>
+<arg>aparna123</arg>
+<doc>Types the given `text` into text field identified by `locator`.</doc>
+<msg timestamp="20230125 16:59:08.640" level="INFO">Typing text 'aparna123' into text field 'xpath=//android.widget.EditText[@text='Password (Required)']'</msg>
+<msg timestamp="20230125 16:59:08.917" level="INFO">xpath criteria: //android.widget.EditText[@text='Password (Required)']</msg>
+<status status="PASS" starttime="20230125 16:59:08.624" endtime="20230125 16:59:08.917"/>
+</kw>
+<kw name="Wait Until Page Contains Element" library="AppiumLibrary">
+<arg>xpath=//android.widget.Button[@text='Create New Account']</arg>
+<doc>Waits until element specified with `locator` appears on current page.</doc>
+<msg timestamp="20230125 16:59:09.966" level="INFO">xpath criteria: //android.widget.Button[@text='Create New Account']</msg>
+<status status="PASS" starttime="20230125 16:59:08.917" endtime="20230125 16:59:09.966"/>
+</kw>
+<kw name="Click Element" library="AppiumLibrary">
+<arg>xpath=//android.widget.Button[@text='Create New Account']</arg>
+<doc>Click element identified by `locator`.</doc>
+<msg timestamp="20230125 16:59:09.966" level="INFO">Clicking element 'xpath=//android.widget.Button[@text='Create New Account']'.</msg>
+<msg timestamp="20230125 16:59:10.153" level="INFO">xpath criteria: //android.widget.Button[@text='Create New Account']</msg>
+<status status="PASS" starttime="20230125 16:59:09.966" endtime="20230125 16:59:10.153"/>
+</kw>
+<kw name="Wait Until Page Contains Element" library="AppiumLibrary">
+<arg>xpath=//android.widget.Button[@text='Explore courses']</arg>
+<doc>Waits until element specified with `locator` appears on current page.</doc>
+<msg timestamp="20230125 16:59:18.851" level="INFO">xpath criteria: //android.widget.Button[@text='Explore courses']
+xpath criteria: //android.widget.Button[@text='Explore courses']
+xpath criteria: //android.widget.Button[@text='Explore courses']
+xpath criteria: //android.widget.Button[@text='Explore courses']
+xpath criteria: //android.widget.Button[@text='Explore courses']
+xpath criteria: //android.widget.Button[@text='Explore courses']
+xpath criteria: //android.widget.Button[@text='Explore courses']
+xpath criteria: //android.widget.Button[@text='Explore courses']
+xpath criteria: //android.widget.Button[@text='Explore courses']
+xpath criteria: //android.widget.Button[@text='Explore courses']
+xpath criteria: //android.widget.Button[@text='Explore courses']
+xpath criteria: //android.widget.Button[@text='Explore courses']
+xpath criteria: //android.widget.Button[@text='Explore courses']
+xpath criteria: //android.widget.Button[@text='Explore courses']
+xpath criteria: //android.widget.Button[@text='Explore courses']
+xpath criteria: //android.widget.Button[@text='Explore courses']</msg>
+<status status="PASS" starttime="20230125 16:59:10.153" endtime="20230125 16:59:18.851"/>
+</kw>
+<kw name="Click Element" library="AppiumLibrary">
+<arg>xpath=//android.widget.Button[@text='Explore courses']</arg>
+<doc>Click element identified by `locator`.</doc>
+<msg timestamp="20230125 16:59:18.851" level="INFO">Clicking element 'xpath=//android.widget.Button[@text='Explore courses']'.</msg>
+<msg timestamp="20230125 16:59:19.066" level="INFO">xpath criteria: //android.widget.Button[@text='Explore courses']</msg>
+<status status="PASS" starttime="20230125 16:59:18.851" endtime="20230125 16:59:19.066"/>
+</kw>
+<kw name="Wait Until Page Contains Element" library="AppiumLibrary">
+<arg>xpath=//android.widget.EditText[@resource-id='org.coursera.android:id/search_src_text']</arg>
+<doc>Waits until element specified with `locator` appears on current page.</doc>
+<msg timestamp="20230125 16:59:20.215" level="INFO">xpath criteria: //android.widget.EditText[@resource-id='org.coursera.android:id/search_src_text']</msg>
+<status status="PASS" starttime="20230125 16:59:19.066" endtime="20230125 16:59:20.215"/>
+</kw>
+<kw name="Click Element" library="AppiumLibrary">
+<arg>xpath=//android.widget.EditText[@resource-id='org.coursera.android:id/search_src_text']</arg>
+<doc>Click element identified by `locator`.</doc>
+<msg timestamp="20230125 16:59:20.215" level="INFO">Clicking element 'xpath=//android.widget.EditText[@resource-id='org.coursera.android:id/search_src_text']'.</msg>
+<msg timestamp="20230125 16:59:22.695" level="INFO">xpath criteria: //android.widget.EditText[@resource-id='org.coursera.android:id/search_src_text']</msg>
+<status status="PASS" starttime="20230125 16:59:20.215" endtime="20230125 16:59:22.695"/>
+</kw>
+<kw name="Input Text" library="AppiumLibrary">
+<arg>xpath=//android.widget.EditText[@resource-id='org.coursera.android:id/search_src_text']</arg>
+<arg>robot</arg>
+<doc>Types the given `text` into text field identified by `locator`.</doc>
+<msg timestamp="20230125 16:59:22.695" level="INFO">Typing text 'robot' into text field 'xpath=//android.widget.EditText[@resource-id='org.coursera.android:id/search_src_text']'</msg>
+<msg timestamp="20230125 16:59:25.156" level="INFO">xpath criteria: //android.widget.EditText[@resource-id='org.coursera.android:id/search_src_text']</msg>
+<status status="PASS" starttime="20230125 16:59:22.695" endtime="20230125 16:59:25.156"/>
+</kw>
+<kw name="Hide Keyboard" library="AppiumLibrary">
+<doc>Hides the software keyboard on the device. (optional) In iOS, use `key_name` to press
+a particular key, ex. `Done`. In Android, no parameters are used.</doc>
+<status status="PASS" starttime="20230125 16:59:25.156" endtime="20230125 16:59:28.031"/>
+</kw>
+<kw name="Get Matching Xpath Count" library="AppiumLibrary">
+<var>${count}</var>
+<arg>xpath=//android.widget.TextView[contains(@text,'making the case for robotic')]</arg>
+<doc>Returns number of elements matching ``xpath``</doc>
+<msg timestamp="20230125 16:59:28.693" level="INFO">xpath criteria: //android.widget.TextView[contains(@text,'making the case for robotic')]</msg>
+<msg timestamp="20230125 16:59:28.693" level="INFO">${count} = 0</msg>
+<status status="PASS" starttime="20230125 16:59:28.031" endtime="20230125 16:59:28.693"/>
+</kw>
+<while condition="${count}==0">
+<iter>
+<kw name="Swipe By Percent" library="AppiumLibrary">
+<arg>90</arg>
+<arg>75</arg>
+<arg>90</arg>
+<arg>25</arg>
+<doc>Swipe from one percent of the screen to another percent, for an optional duration.
+Normal swipe fails to scale for different screen resolutions, this can be avoided using percent.</doc>
+<status status="PASS" starttime="20230125 16:59:28.693" endtime="20230125 16:59:30.105"/>
+</kw>
+<kw name="Get Matching Xpath Count" library="AppiumLibrary">
+<var>${count}</var>
+<arg>xpath=//android.widget.TextView[contains(@text,'making the case for robotic')]</arg>
+<doc>Returns number of elements matching ``xpath``</doc>
+<msg timestamp="20230125 16:59:31.084" level="INFO">xpath criteria: //android.widget.TextView[contains(@text,'making the case for robotic')]</msg>
+<msg timestamp="20230125 16:59:31.084" level="INFO">${count} = 0</msg>
+<status status="PASS" starttime="20230125 16:59:30.105" endtime="20230125 16:59:31.084"/>
+</kw>
+<status status="PASS" starttime="20230125 16:59:28.693" endtime="20230125 16:59:31.084"/>
+</iter>
+<iter>
+<kw name="Swipe By Percent" library="AppiumLibrary">
+<arg>90</arg>
+<arg>75</arg>
+<arg>90</arg>
+<arg>25</arg>
+<doc>Swipe from one percent of the screen to another percent, for an optional duration.
+Normal swipe fails to scale for different screen resolutions, this can be avoided using percent.</doc>
+<status status="PASS" starttime="20230125 16:59:31.084" endtime="20230125 16:59:32.470"/>
+</kw>
+<kw name="Get Matching Xpath Count" library="AppiumLibrary">
+<var>${count}</var>
+<arg>xpath=//android.widget.TextView[contains(@text,'making the case for robotic')]</arg>
+<doc>Returns number of elements matching ``xpath``</doc>
+<msg timestamp="20230125 16:59:33.341" level="INFO">xpath criteria: //android.widget.TextView[contains(@text,'making the case for robotic')]</msg>
+<msg timestamp="20230125 16:59:33.341" level="INFO">${count} = 1</msg>
+<status status="PASS" starttime="20230125 16:59:32.470" endtime="20230125 16:59:33.341"/>
+</kw>
+<status status="PASS" starttime="20230125 16:59:31.084" endtime="20230125 16:59:33.341"/>
+</iter>
+<status status="PASS" starttime="20230125 16:59:28.693" endtime="20230125 16:59:33.341"/>
+</while>
+<kw name="Wait Until Page Contains Element" library="AppiumLibrary">
+<arg>xpath=//android.widget.TextView[contains(@text,'making the case for robotic')]</arg>
+<doc>Waits until element specified with `locator` appears on current page.</doc>
+<msg timestamp="20230125 16:59:33.497" level="INFO">xpath criteria: //android.widget.TextView[contains(@text,'making the case for robotic')]</msg>
+<status status="PASS" starttime="20230125 16:59:33.341" endtime="20230125 16:59:33.497"/>
+</kw>
+<kw name="Click Element" library="AppiumLibrary">
+<arg>xpath=//android.widget.TextView[contains(@text,'making the case for robotic')]</arg>
+<doc>Click element identified by `locator`.</doc>
+<msg timestamp="20230125 16:59:33.497" level="INFO">Clicking element 'xpath=//android.widget.TextView[contains(@text,'making the case for robotic')]'.</msg>
+<msg timestamp="20230125 16:59:33.735" level="INFO">xpath criteria: //android.widget.TextView[contains(@text,'making the case for robotic')]</msg>
+<status status="PASS" starttime="20230125 16:59:33.497" endtime="20230125 16:59:33.735"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>30s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20230125 17:00:03.736" level="INFO">Slept 30 seconds</msg>
+<status status="PASS" starttime="20230125 16:59:33.735" endtime="20230125 17:00:03.736"/>
+</kw>
+<kw name="Close Application" library="AppiumLibrary" type="TEARDOWN">
+<doc>Closes the current application and also close webdriver session.</doc>
+<status status="PASS" starttime="20230125 17:00:03.738" endtime="20230125 17:00:04.428"/>
 </kw>
 <doc>working with native app
 for automating sign up activity</doc>
-<status status="FAIL" starttime="20230124 17:15:51.512" endtime="20230124 17:16:05.151">WebDriverException: Message: An unknown server-side error occurred while processing the command. Original error: Cannot start the 'com.healthifyme.basic' application. Visit https://github.com/appium/appium/blob/master/docs/en/writing-running-appium/android/activity-startup.md for troubleshooting. Original error: Error executing adbExec. Original error: 'Command 'C:\\Users\\40032118\\AppData\\Local\\Android\\Sdk\\platform-tools\\adb.exe -P 5037 -s 51d4c427 shell am start -W -S -a android.intent.action.MAIN -c android.intent.category.LAUNCHER -f 0x10200000' exited with code 1'; Command output: Error: Intent does not match any activities: Intent { act=android.intent.action.MAIN cat=[android.intent.category.LAUNCHER] flg=0x10200000 }
-
-Stacktrace:
-UnknownError: An unknown server-side error occurred while processing the command. Original error: Cannot start the 'com.healthifyme.basic' application. Visit https://github.com/appium/appium/blob/master/docs/en/writing-running-appium/android/activity-startup.md for troubleshooting. Original error: Error executing adbExec. Original error: 'Command 'C:\\Users\\40032118\\AppData\\Local\\Android\\Sdk\\platform-tools\\adb.exe -P 5037 -s 51d4c427 shell am start -W -S -a android.intent.action.MAIN -c android.intent.category.LAUNCHER -f 0x10200000' exited with code 1'; Command output: Error: Intent does not match any activities: Intent { act=android.intent.action.MAIN cat=[android.intent.category.LAUNCHER] flg=0x10200000 }
-
-    at getResponseForW3CError (C:\components\Appium-Server-GUI-windows-1.22.3-4\resources\app\node_modules\appium\node_modules\appium-base-driver\lib\protocol\errors.js:804:9)
-    at asyncHandler (C:\components\Appium-Server-GUI-windows-1.22.3-4\resources\app\node_modules\appium\node_modules\appium-base-driver\lib\protocol\protocol.js:380:37)</status>
+<status status="PASS" starttime="20230125 16:58:43.372" endtime="20230125 17:00:04.429"/>
 </test>
-<status status="FAIL" starttime="20230124 17:15:51.193" endtime="20230124 17:16:05.152"/>
+<status status="PASS" starttime="20230125 16:58:43.068" endtime="20230125 17:00:04.431"/>
 </suite>
 <statistics>
 <total>
-<stat pass="0" fail="1" skip="0">All Tests</stat>
+<stat pass="1" fail="0" skip="0">All Tests</stat>
 </total>
 <tag>
 </tag>
 <suite>
-<stat pass="0" fail="1" skip="0" id="s1" name="Demo1 Android App">Demo1 Android App</stat>
+<stat pass="1" fail="0" skip="0" id="s1" name="Demo1 Android App">Demo1 Android App</stat>
 </suite>
 </statistics>
 <errors>
-<msg timestamp="20230124 17:16:05.144" level="WARN">Keyword 'Capture Page Screenshot' could not be run on failure: No application is open</msg>
 </errors>
 </robot>
