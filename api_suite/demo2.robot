@@ -7,16 +7,19 @@ Suite Setup  Create Session    alias=petshop    url=https://petstore.swagger.io/
 
 *** Test Cases ***
 TC1 Get Pet
+    [Tags]  smoke
     ${response}  GET On Session  alias=petshop  url=pet/12
     Status Should Be   200
 
 TC2 Pet Not Found
+    [Tags]  hign
     ${response}  GET On Session  alias=petshop  url=pet/102   expected_status=404
     Status Should Be   404
     ${response_body}  Convert To String   ${response.json()}
     Should Contain   ${response_body}    Pet not found
 
 TC3 Get Query String
+    [Tags]  smoke
     ${response}  GET On Session  alias=petshop  url=pet/findByStatus?status=sold
     Status Should Be   200
     Log     ${response.json()}
@@ -26,5 +29,21 @@ TC4 Add Pet
     ${json}  Get Binary File  path=${EXECDIR}${/}test_data${/}data.json
     &{headers}  Create Dictionary  content-type=application/json
     ${response}  POST On Session  alias=petshop  url=pet  data=${json}  headers=${headers}
+    Status Should Be   200
+    Log     ${response.json()}
+
+TC5 Delete Pet
+    ${delete}  DELETE On Session  alias=petshop  url=pet/12
+    Status Should Be   200
+
+TC6 Delete Pet Not Found
+    ${response}  DELETE On Session  alias=petshop  url=pet/776   expected_status=404
+    Status Should Be   404
+    Log  ${response.reason}
+
+TC7 Update Pet
+    ${json}  Get Binary File  path=${EXECDIR}${/}test_data${/}data.json
+    &{headers}  Create Dictionary  content-type=application/json
+    ${response}  PUT On Session  alias=petshop  url=pet  data=${json}  headers=${headers}
     Status Should Be   200
     Log     ${response.json()}

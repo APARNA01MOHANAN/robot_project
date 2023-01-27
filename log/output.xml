@@ -1,85 +1,79 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<robot generator="Robot 6.0.2 (Python 3.11.1 on win32)" generated="20230127 11:32:25.770" rpa="false" schemaversion="3">
-<suite id="s1" name="Demo1" source="C:\robot_project\api_suite\demo1.robot">
-<test id="s1-t1" name="TC1 Get Pet" line="6">
-<kw name="Create Session" library="RequestsLibrary">
+<robot generator="Robot 6.0.2 (Python 3.11.1 on win32)" generated="20230127 12:13:56.120" rpa="false" schemaversion="3">
+<suite id="s1" name="Demo2" source="C:\robot_project\api_suite\demo2.robot">
+<kw name="Create Session" library="RequestsLibrary" type="SETUP">
 <arg>alias=petshop</arg>
 <arg>url=https://petstore.swagger.io/v2</arg>
 <doc>Create Session: create a HTTP session to a server</doc>
-<msg timestamp="20230127 11:32:25.902" level="INFO">Creating Session using : alias=petshop, url=https://petstore.swagger.io/v2, headers={},                     cookies={}, auth=None, timeout=None, proxies=None, verify=False,                     debug=0 </msg>
-<status status="PASS" starttime="20230127 11:32:25.902" endtime="20230127 11:32:25.918"/>
+<msg timestamp="20230127 12:13:56.295" level="INFO">Creating Session using : alias=petshop, url=https://petstore.swagger.io/v2, headers={},                     cookies={}, auth=None, timeout=None, proxies=None, verify=False,                     debug=0 </msg>
+<status status="PASS" starttime="20230127 12:13:56.295" endtime="20230127 12:13:56.303"/>
 </kw>
-<kw name="GET On Session" library="RequestsLibrary">
+<test id="s1-t1" name="TC7 Update Pet" line="41">
+<kw name="Get Binary File" library="OperatingSystem">
+<var>${json}</var>
+<arg>path=${EXECDIR}${/}test_data${/}data.json</arg>
+<doc>Returns the contents of a specified file.</doc>
+<msg timestamp="20230127 12:13:56.306" level="INFO" html="true">Getting file '&lt;a href="file://C:\robot_project\test_data\data.json"&gt;C:\robot_project\test_data\data.json&lt;/a&gt;'.</msg>
+<msg timestamp="20230127 12:13:56.307" level="INFO">${json} = {
+  "id": 12,
+  "category": {
+    "id": 0,
+    "name": "string"
+  },
+  "name": "scooby",
+  "photoUrls": [
+    "string"
+  ],
+  "tags": [
+    {
+      "id": 0,
+      "name": "string"
+    }...</msg>
+<status status="PASS" starttime="20230127 12:13:56.304" endtime="20230127 12:13:56.307"/>
+</kw>
+<kw name="Create Dictionary" library="BuiltIn">
+<var>&amp;{headers}</var>
+<arg>content-type=application/json</arg>
+<doc>Creates and returns a dictionary based on the given ``items``.</doc>
+<msg timestamp="20230127 12:13:56.309" level="INFO">&amp;{headers} = { content-type=application/json }</msg>
+<status status="PASS" starttime="20230127 12:13:56.308" endtime="20230127 12:13:56.309"/>
+</kw>
+<kw name="PUT On Session" library="RequestsLibrary">
 <var>${response}</var>
 <arg>alias=petshop</arg>
-<arg>url=pet/101</arg>
-<doc>Sends a GET request on a previously created HTTP Session.</doc>
-<msg timestamp="20230127 11:32:26.910" level="INFO">GET Request : url=https://petstore.swagger.io/v2/pet/101 
- path_url=/v2/pet/101 
- headers={'User-Agent': 'python-requests/2.28.2', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive'} 
- body=None 
+<arg>url=pet</arg>
+<arg>data=${json}</arg>
+<arg>headers=${headers}</arg>
+<doc>Sends a PUT request on a previously created HTTP Session.</doc>
+<msg timestamp="20230127 12:13:57.246" level="INFO">PUT Request : url=https://petstore.swagger.io/v2/pet 
+ path_url=/v2/pet 
+ headers={'User-Agent': 'python-requests/2.28.2', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive', 'content-type': 'application/json', 'Content-Length': '233'} 
+ body=b'{\r\n  "id": 12,\r\n  "category": {\r\n    "id": 0,\r\n    "name": "string"\r\n  },\r\n  "name": "scooby",\r\n  "photoUrls": [\r\n    "string"\r\n  ],\r\n  "tags": [\r\n    {\r\n      "id": 0,\r\n      "name": "string"\r\n    }\r\n  ],\r\n  "status": "available"\r\n}' 
  </msg>
-<msg timestamp="20230127 11:32:26.910" level="INFO">GET Response : url=https://petstore.swagger.io/v2/pet/101 
+<msg timestamp="20230127 12:13:57.246" level="INFO">PUT Response : url=https://petstore.swagger.io/v2/pet 
  status=200, reason=OK 
- headers={'Date': 'Fri, 27 Jan 2023 06:02:26 GMT', 'Content-Type': 'application/json', 'Transfer-Encoding': 'chunked', 'Connection': 'keep-alive', 'Access-Control-Allow-Origin': '*', 'Access-Control-Allow-Methods': 'GET, POST, DELETE, PUT', 'Access-Control-Allow-Headers': 'Content-Type, api_key, Authorization', 'Server': 'Jetty(9.2.9.v20150224)'} 
- body={"id":101,"category":{"id":0,"name":"string"},"name":"doggie","photoUrls":["string"],"tags":[{"id":0,"name":"string"}],"status":"available"} 
+ headers={'Date': 'Fri, 27 Jan 2023 06:43:57 GMT', 'Content-Type': 'application/json', 'Transfer-Encoding': 'chunked', 'Connection': 'keep-alive', 'Access-Control-Allow-Origin': '*', 'Access-Control-Allow-Methods': 'GET, POST, DELETE, PUT', 'Access-Control-Allow-Headers': 'Content-Type, api_key, Authorization', 'Server': 'Jetty(9.2.9.v20150224)'} 
+ body={"id":12,"category":{"id":0,"name":"string"},"name":"scooby","photoUrls":["string"],"tags":[{"id":0,"name":"string"}],"status":"available"} 
  </msg>
-<msg timestamp="20230127 11:32:26.910" level="INFO">C:\Users\40032118\AppData\Local\Programs\Python\Python311\Lib\site-packages\urllib3\connectionpool.py:1045: InsecureRequestWarning: Unverified HTTPS request is being made to host 'petstore.swagger.io'. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.io/en/1.26.x/advanced-usage.html#ssl-warnings
+<msg timestamp="20230127 12:13:57.246" level="INFO">C:\Users\40032118\AppData\Local\Programs\Python\Python311\Lib\site-packages\urllib3\connectionpool.py:1045: InsecureRequestWarning: Unverified HTTPS request is being made to host 'petstore.swagger.io'. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.io/en/1.26.x/advanced-usage.html#ssl-warnings
   warnings.warn(</msg>
-<msg timestamp="20230127 11:32:26.910" level="INFO">${response} = &lt;Response [200]&gt;</msg>
-<status status="PASS" starttime="20230127 11:32:25.918" endtime="20230127 11:32:26.910"/>
-</kw>
-<kw name="Log" library="BuiltIn">
-<arg>${response}</arg>
-<doc>Logs the given message with the given level.</doc>
-<msg timestamp="20230127 11:32:26.910" level="INFO">&lt;Response [200]&gt;</msg>
-<status status="PASS" starttime="20230127 11:32:26.910" endtime="20230127 11:32:26.910"/>
-</kw>
-<kw name="Log" library="BuiltIn">
-<arg>${response.json()}</arg>
-<doc>Logs the given message with the given level.</doc>
-<msg timestamp="20230127 11:32:26.910" level="INFO">{'id': 101, 'category': {'id': 0, 'name': 'string'}, 'name': 'doggie', 'photoUrls': ['string'], 'tags': [{'id': 0, 'name': 'string'}], 'status': 'available'}</msg>
-<status status="PASS" starttime="20230127 11:32:26.910" endtime="20230127 11:32:26.910"/>
-</kw>
-<kw name="Log" library="BuiltIn">
-<arg>${response.json()}[id]</arg>
-<doc>Logs the given message with the given level.</doc>
-<msg timestamp="20230127 11:32:26.910" level="INFO">101</msg>
-<status status="PASS" starttime="20230127 11:32:26.910" endtime="20230127 11:32:26.910"/>
-</kw>
-<kw name="Convert To Integer" library="BuiltIn">
-<var>${expected_id}</var>
-<arg>101</arg>
-<doc>Converts the given item to an integer number.</doc>
-<msg timestamp="20230127 11:32:26.910" level="INFO">${expected_id} = 101</msg>
-<status status="PASS" starttime="20230127 11:32:26.910" endtime="20230127 11:32:26.910"/>
-</kw>
-<kw name="Should Be Equal" library="BuiltIn">
-<arg>${response.json()}[id]</arg>
-<arg>${expected_id}</arg>
-<doc>Fails if the given objects are unequal.</doc>
-<status status="PASS" starttime="20230127 11:32:26.910" endtime="20230127 11:32:26.910"/>
-</kw>
-<kw name="Log" library="BuiltIn">
-<arg>${response.json()}[name]</arg>
-<doc>Logs the given message with the given level.</doc>
-<msg timestamp="20230127 11:32:26.926" level="INFO">doggie</msg>
-<status status="PASS" starttime="20230127 11:32:26.910" endtime="20230127 11:32:26.926"/>
-</kw>
-<kw name="Should Be Equal" library="BuiltIn">
-<arg>${response.json()}[name]</arg>
-<arg>doggie</arg>
-<doc>Fails if the given objects are unequal.</doc>
-<status status="PASS" starttime="20230127 11:32:26.926" endtime="20230127 11:32:26.926"/>
+<msg timestamp="20230127 12:13:57.246" level="INFO">${response} = &lt;Response [200]&gt;</msg>
+<status status="PASS" starttime="20230127 12:13:56.310" endtime="20230127 12:13:57.246"/>
 </kw>
 <kw name="Status Should Be" library="RequestsLibrary">
 <arg>200</arg>
 <doc>Fails if response status code is different than the expected.</doc>
-<status status="PASS" starttime="20230127 11:32:26.927" endtime="20230127 11:32:26.927"/>
+<status status="PASS" starttime="20230127 12:13:57.246" endtime="20230127 12:13:57.246"/>
 </kw>
-<status status="PASS" starttime="20230127 11:32:25.902" endtime="20230127 11:32:26.927"/>
+<kw name="Log" library="BuiltIn">
+<arg>${response.json()}</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20230127 12:13:57.246" level="INFO">{'id': 12, 'category': {'id': 0, 'name': 'string'}, 'name': 'scooby', 'photoUrls': ['string'], 'tags': [{'id': 0, 'name': 'string'}], 'status': 'available'}</msg>
+<status status="PASS" starttime="20230127 12:13:57.246" endtime="20230127 12:13:57.246"/>
+</kw>
+<status status="PASS" starttime="20230127 12:13:56.304" endtime="20230127 12:13:57.246"/>
 </test>
-<status status="PASS" starttime="20230127 11:32:25.770" endtime="20230127 11:32:26.927"/>
+<status status="PASS" starttime="20230127 12:13:56.136" endtime="20230127 12:13:57.246"/>
 </suite>
 <statistics>
 <total>
@@ -88,7 +82,7 @@
 <tag>
 </tag>
 <suite>
-<stat pass="1" fail="0" skip="0" id="s1" name="Demo1">Demo1</stat>
+<stat pass="1" fail="0" skip="0" id="s1" name="Demo2">Demo2</stat>
 </suite>
 </statistics>
 <errors>
