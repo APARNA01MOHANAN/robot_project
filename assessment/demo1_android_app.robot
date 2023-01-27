@@ -38,13 +38,12 @@ TC1 Swipe
     END
     Wait Until Page Contains Element   xpath=//android.widget.TextView[contains(@text,'making the case for robotic')]
     Click Element   xpath=//android.widget.TextView[contains(@text,'making the case for robotic')]
-    Wait Until Page Contains Element   xpath=//android.widget.TextView[contains(@text,'Making the Case for Robotic)]
+    Wait Until Page Contains Element   xpath=//android.widget.TextView[contains(@text,'Making the Case for Robotic')]
     Click Element   xpath=//android.widget.TextView[contains(@text,'Making the Case for Robotic')]
-    Wait Until Page Contains Element   xpath=//android.widget.TextView[contains(@text,'the fifth ruler')]  50s
-    ${text}     Get Text    xpath=//android.widget.TextView[contains(@text,'the fifth ruler')]
-
-  Log To Console    ${text}
-    Element Should Contain Text      xpath=//android.widget.TextView[contains(@text,
+    Wait Until Page Contains Element   xpath=//*[contains(@text,'About this Course')]  30s
+    ${text}     Get Text    xpath=//*[contains(@text,'About this Course')]
+    Log To Console    ${text}
+    Element Text Should Be   xpath=//*[contains(@text,'About this Course')]  About this Course
     sleep  30s
     [Teardown]  Close Application
 

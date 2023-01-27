@@ -16,8 +16,8 @@ TC1 Swipe
     Set Appium Timeout   20s
     Run Keyword And Ignore Error   Wait Until Page Contains Element  xpath=//*[@text='Dismiss']
     Run Keyword And Ignore Error     Click Element    xpath=//*[@text='Dismiss']
-    Wait Until Page Contains Element  xpath=//android.widget.Button[@text='Search']
-    Click Element    xpath=//android.widget.Button[@text='Search']
+    Wait Until Page Contains Element  xpath=//android.widget.Button[@text='Explore']
+    Click Element    xpath=//android.widget.Button[@text='Explore']
     Wait Until Page Contains Element  xpath=//android.widget.TextView[@text='Arts and humanities']
     Click Element  xpath=//android.widget.TextView[@text='Arts and humanities']
 
