@@ -37,7 +37,7 @@ TC5 Delete Pet
     Status Should Be   200
 
 TC6 Delete Pet Not Found
-    ${response}  DELETE On Session  alias=petshop  url=pet/776   expected_status=404
+    ${response}  DELETE On Session  alias=petshop  url=pet/778   expected_status=404
     Status Should Be   404
     Log  ${response.reason}
 
